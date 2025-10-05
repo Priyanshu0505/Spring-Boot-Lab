@@ -1,9 +1,2 @@
-This repository contains my Spring Boot lab experiments, including REST APIs, CRUD operations, JPA/Hibernate, service layers, and database integration.
-
-🚀 Tech Stack
-
-Java, Spring Boot
-
-MySQL
-
-Maven
+About
+Spring Boot Lab Programs and Experiments – covering core concepts like REST APIs, JPA, CRUD operations, and service layers.
