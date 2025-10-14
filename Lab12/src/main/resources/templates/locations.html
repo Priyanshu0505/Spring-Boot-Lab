@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Location Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Location Management</h2>
+    <form th:action="@{/locations/add}" method="post" class="mb-4">
+        <div class="row">
+            <div class="col-md-5"><input type="text" name="name" placeholder="Location Name" class="form-control" required></div>
+            <div class="col-md-5"><input type="text" name="address" placeholder="Address" class="form-control" required></div>
+            <div class="col-md-2"><button class="btn btn-custom w-100">Add Location</button></div>
+        </div>
+    </form>
+    <table class="table table-dark table-striped">
+        <thead><tr><th>ID</th><th>Name</th><th>Address</th><th>Actions</th></tr></thead>
+        <tbody>
+        <tr th:each="loc : ${locations}">
+            <td th:text="${loc.id}"></td>
+            <td th:text="${loc.name}"></td>
+            <td th:text="${loc.address}"></td>
+            <td><a th:href="@{'/locations/delete/' + ${loc.id}}" class="btn btn-danger btn-sm">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/" class="btn btn-custom mt-3">Back to Home</a>
+</div>
+</body>
+</html>

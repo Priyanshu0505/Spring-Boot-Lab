@@ -1,0 +1,19 @@
+package com.priyanshu.Lab12.service;
+import com.priyanshu.Lab12.entity.Post;
+import com.priyanshu.Lab12.repository.PostRepository;
+import org.springframework.stereotype.Service;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+@Service
+public class PostService {
+    private final PostRepository postRepository;
+    public PostService(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
+    public List<Post> findAll() { return postRepository.findAll(); }
+    public void save(Post post) { postRepository.save(post); }
+    public void deleteById(int id) { postRepository.deleteById(id); }
+    public Optional<Post> findById(int id) { return postRepository.findById(id); }
+    public List<Post> findByDate(LocalDate date) { return postRepository.findByDate(date); }
+}
